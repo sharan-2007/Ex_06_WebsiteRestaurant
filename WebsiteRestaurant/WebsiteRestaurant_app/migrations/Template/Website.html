@@ -3,48 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bandi Restaurant</title>
+  <title>Ember & Spice</title>
+
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-    body{background:#f7f7f7;color:#333}
-    header{background:#111;color:#fff;padding:20px 40px;display:flex;justify-content:space-between;align-items:center}
-    header h1{font-size:28px}
-    nav a{color:#fff;margin:0 15px;text-decoration:none;font-weight:bold}
-    nav a:hover{color:#ff9800}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI', sans-serif;
+    }
 
-    .hero{height:80vh;background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
-    .hero h2{font-size:48px;background:rgba(0,0,0,0.6);padding:20px;border-radius:10px}
+    body{
+      background:#fafafa;
+      color:#222;
+    }
 
-    section{padding:60px 40px}
-    .title{text-align:center;margin-bottom:40px}
-    .title h2{font-size:36px;color:#111}
+    header{
+      background:#1a1a1a;
+      color:#fff;
+      padding:20px 50px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-    .about{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
-    .about img{width:100%;border-radius:15px}
+    header h1{
+      font-size:30px;
+      letter-spacing:2px;
+    }
 
-    .menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
-    .menu-card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.1)}
-    .menu-card img{width:100%;height:200px;object-fit:cover}
-    .menu-card div{padding:15px}
+    nav a{
+      color:#fff;
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:600;
+    }
 
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-    .gallery img{width:100%;border-radius:15px}
+    nav a:hover{
+      color:#ff5722;
+    }
 
-    .contact{background:#111;color:#fff;text-align:center}
-    .contact p{margin:10px 0}
+    .hero{
+      height:85vh;
+      background:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
 
-    footer{background:#000;color:#aaa;text-align:center;padding:15px}
+    .hero h2{
+      font-size:50px;
+      color:#fff;
+      background:rgba(0,0,0,0.65);
+      padding:25px 40px;
+      border-radius:12px;
+    }
+
+    section{
+      padding:70px 50px;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:45px;
+    }
+
+    .section-title h2{
+      font-size:38px;
+      color:#1a1a1a;
+    }
+
+    .about{
+      display:flex;
+      gap:40px;
+      align-items:center;
+    }
+
+    .about p{
+      font-size:18px;
+      line-height:1.7;
+    }
+
+    .about img{
+      width:100%;
+      max-width:450px;
+      border-radius:20px;
+    }
+
+    .menu{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .menu-item{
+      background:#fff;
+      border-radius:18px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.12);
+      overflow:hidden;
+      transition:transform 0.3s;
+    }
+
+    .menu-item:hover{
+      transform:translateY(-8px);
+    }
+
+    .menu-item img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+
+    .menu-item div{
+      padding:18px;
+      text-align:center;
+    }
+
+    .menu-item h3{
+      margin-bottom:8px;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:25px;
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:18px;
+    }
+
+    .contact{
+      background:#1a1a1a;
+      color:#fff;
+      text-align:center;
+    }
+
+    .contact p{
+      margin:12px 0;
+      font-size:17px;
+    }
+
+    footer{
+      background:#000;
+      color:#aaa;
+      text-align:center;
+      padding:18px;
+    }
 
     @media(max-width:768px){
-      .about{grid-template-columns:1fr}
-      .hero h2{font-size:32px}
+      .about{
+        flex-direction:column;
+      }
+      .hero h2{
+        font-size:34px;
+      }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Bandi Restaurant</h1>
+  <h1>EMBER & SPICE</h1>
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -55,64 +176,74 @@
 </header>
 
 <div class="hero" id="home">
-  <h2>Delicious Food, Cozy Place</h2>
+  <h2>Where Fire Meets Flavor</h2>
 </div>
 
 <section id="about">
-  <div class="title"><h2>About Us</h2></div>
+  <div class="section-title">
+    <h2>About Ember & Spice</h2>
+  </div>
   <div class="about">
     <p>
-      Welcome to JuJu Restaurant! We serve freshly prepared dishes using
-      high-quality ingredients. Our chefs blend traditional flavors with modern
-      cooking styles to give you a memorable dining experience.
+      Ember & Spice is a modern restaurant inspired by bold flavors and
+      slow-cooked perfection. Every dish is crafted with passion, blending
+      classic recipes with a contemporary touch to create an unforgettable
+      dining experience.
     </p>
-    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" alt="Restaurant Interior" />
+    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" alt="Interior">
   </div>
 </section>
 
 <section id="menu">
-  <div class="title"><h2>Our Menu</h2></div>
+  <div class="section-title">
+    <h2>Signature Menu</h2>
+  </div>
   <div class="menu">
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1604908177225-6c6fca31b3c5" />
-      <div><h3>Grilled Chicken</h3><p>₹280</p></div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1604908177225-6c6fca31b3c5">
+      <div><h3>Smoked Grilled Chicken</h3><p>₹299</p></div>
     </div>
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe" />
-      <div><h3>Veg Salad</h3><p>₹180</p></div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
+      <div><h3>Fresh Garden Salad</h3><p>₹199</p></div>
     </div>
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1598515214146-dab39da1243d" />
-      <div><h3>Cheese Pizza</h3><p>₹320</p></div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1598515214146-dab39da1243d">
+      <div><h3>Classic Cheese Pizza</h3><p>₹349</p></div>
     </div>
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" />
-      <div><h3>Dessert</h3><p>₹150</p></div>
+
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b">
+      <div><h3>Chocolate Dessert</h3><p>₹179</p></div>
     </div>
   </div>
 </section>
 
 <section id="gallery">
-  <div class="title"><h2>Gallery</h2></div>
+  <div class="section-title">
+    <h2>Moments & Dishes</h2>
+  </div>
   <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" />
-    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8" />
-    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" />
-    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" />
+    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
+    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
   </div>
 </section>
 
 <section id="contact" class="contact">
-  <div class="Bandi Restaurant"><h2>Contact Us</h2></div>
+  <h2>Contact Us</h2>
   <p>📍 Chennai, India</p>
-  <p>📞 +91 6383452896</p>
-  <p>✉️ dineshkarthiktd@gmail.com</p>
-  <p>Dinesh Karthik T D</p>
-  <p>25013939</p>
+  <p>📞 +91 7871392938</p>
+  <p>✉️ contact@emberandspice.com</p>
+  <p>M Sharan Kumar</p>
+  <p>25005446</p>
 </section>
 
 <footer>
-  <p>©️ 2025 JuJu Restaurant. All Rights Reserved.</p>
+  <p>© 2025 Ember & Spice. All Rights Reserved.</p>
 </footer>
 
 </body>
